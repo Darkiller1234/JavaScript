@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<body>
+
+    <button id="btn1">1</button>
+    <button id="btn1">2</button>
+    <button id="btn1">3</button>
+    <script>
+        function test(){
+            console.log("teest함수")
+        }
+        test();
+
+        const test2 = function(){
+            colsole.log("test2함수")
+            console.log(this);
+        }
+        test2                                                                                                                                                                                                                                                                     ();
+
+        const test3 = () => {
+            console.log("test3함수")
+            console.log(this);
+        }
+        test3();
+
+        document.getElementById("btn1").onclick = test;
+        document.getElementById("btn2").onclick = test2;
+        document.getElementById("btn3").onclick = test3;
+    </script>
+</body>
+</html>
