@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Practice1</h1>
+    <form action="">
+        <fieldset>
+            <table>
+                <tr>
+                    <td>
+                        <label><input type="checkbox" id="checkAll" name="hobby" onchange="AllCheck()">전체선택</label>
+                    </td>
+                    <td>
+                        <label><input type="checkbox" id="checlVerial" name="hobby" value="종합" onchange="checkBoxTrigger()">종합</label>
+                    </td>
+                    <td>
+                        <label><input type="checkbox" id="checkSosul" name="hobby" value="소설" onchange="checkBoxTrigger()">소설</label>
+                    </td>
+                    <td>
+                        <label><input type="checkbox" id="checkSi" name="hobby" value="시/에세이" onchange="checkBoxTrigger()">시/에세이</label>
+                    </td>
+                    <td>
+                        <label><input type="checkbox" id="checkEco" name="hobby"value="경제/경영" onchange="checkBoxTrigger()">경제/경영</label>
+                    </td>
+                    <td>
+                        <label><input type="checkbox" id="checkSelf" name="hobby" value="자기계발" onchange="checkBoxTrigger()">자기계발</label>
+                    </td>
+                    <td>
+                        <label><input type="checkbox" id="checkChild" name="hobby" value="아동" onchange="checkBoxTrigger()">아동</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label></label>
+                    </td>
+                    <td>
+                        <label><input type="checkbox" id="checkTrav" name="hobby" value="여행" onchange="checkBoxTrigger()">여행</label>
+                    </td>
+                    <td>
+                        <label><input type="checkbox" id="checkSci" name="hobby" value="과학" onchange="checkBoxTrigger()">과학</label>
+                    </td>
+                    <td>
+                        <label><input type="checkbox" id="checkHis" name="hobby" value="역사/문화" onchange="checkBoxTrigger()">역사/문화</label>
+                    </td>
+                    <td>
+                        <label><input type="checkbox" id="checkEng" name="hobby" value="외국어" onchange="checkBoxTrigger()">외국어</label>
+                    </td>
+                    <td>
+                        <label><input type="checkbox" id="checkCom" name="hobby" value="컴퓨터" onchange="checkBoxTrigger()">컴퓨터</label>
+                    </td>
+                    <td>
+                        <label><input type="checkbox" id="checkComic" name="hobby" value="만화" onchange="checkBoxTrigger()">만화</label>
+                    </td>
+                </tr>
+            </table>
+            <legend>취미</legend>
+        </fieldset>
+    </form>
+    
+    <div id="area1"></div>
+    <script>
+        function AllCheck(){
+            let checkAll = document.getElementById("checkAll");
+            let checkList = document.getElementsByName("hobby");
+
+            for(let box of checkList){
+                box.checked = checkAll.checked
+            }
+
+            checkHobby();
+        }
+        function checkBoxTrigger(){
+            let allCheck = true;
+
+            let hobbyList = document.getElementsByName("hobby");
+            for(let checkBox of hobbyList){
+                if(checkBox.id === "checkAll"){
+                    continue;
+                }
+                if(!checkBox.checked){
+                    allCheck = false;
+                    break;
+                }
+            }
+
+            let allCheckBox = document.getElementById("checkAll");
+            allCheckBox.checked = allCheck;
+
+            checkHobby();
+        }
+
+        function checkHobby(){
+            let hobbyList = document.getElementsByName("hobby");
+            let value = "";
+
+            for(let checkBox of hobbyList){
+                if(checkBox.id === "checkAll"){
+                    continue;
+                }
+
+                if(checkBox.checked){
+                    value += checkBox.value + " ";
+                }
+            }
+
+            document.getElementById("area1").innerText = value;
+        }
+    </script>
+</body>
+</html>
