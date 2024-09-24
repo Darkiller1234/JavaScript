@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js" integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM=" crossorigin="anonymous"></script>
+    
+    <style>
+        fieldset{
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            text-align: center;
+        }
+        .box{
+            background-color: lightgray;
+            padding: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Practice7</h1>
+    <fieldset>
+        <legend>검색할 항목을 선택하세요.</legend>
+        <label>
+            <input type="radio" name="category" value="title" onclick="showSearchBox()"> 제목
+        </label>
+        <label>
+            <input type="radio" name="category" value="date" onclick="showSearchBox()"> 날짜
+        </label>
+        <label>
+            <input type="radio" name="category" value="writer" onclick="showSearchBox()"> 작성자
+        </label>
+    </fieldset>
+
+    <br>
+
+    <div class="box">
+        <form action="">
+            <label>검색할 제목을 입력하세요 : </label>
+            <br>
+            <input type="text" name="title" size="50"> <input type="button" value="검색" onclick="return false">
+        </form>
+    </div>
+
+    <div class="box">
+        <form action="">
+            <label>검색할 날짜을 입력하세요 : </label>
+            <br>
+            <input type="date" name="start"> -  <input type="date" name="end"><input type="button" value="검색" onclick="return false">
+        </form>
+    </div>
+
+    <script>
+        function showSearchBox(id){
+            
+        }
+    </script>
+</body>
+</html>
